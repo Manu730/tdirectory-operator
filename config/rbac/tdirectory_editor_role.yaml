@@ -1,0 +1,31 @@
+# permissions for end users to edit tdirectories.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: tdirectory-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: tdirectory-operator
+    app.kubernetes.io/part-of: tdirectory-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: tdirectory-editor-role
+rules:
+- apiGroups:
+  - testoperators.tdirectory.com
+  resources:
+  - tdirectories
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - testoperators.tdirectory.com
+  resources:
+  - tdirectories/status
+  verbs:
+  - get
