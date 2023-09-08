@@ -35,6 +35,7 @@ type TdirectorySpec struct {
 }
 
 type TdirectoryApp struct {
+	Name            string             `json:"name,omitempty"`
 	Repository      string             `json:"repository,omitempty"`
 	Tag             string             `json:"tag,omitempty"`
 	ImagePullPolicy corev1.PullPolicy  `json:"imagePullPolicy,omitempty"`
@@ -45,6 +46,7 @@ type TdirectoryApp struct {
 }
 
 type TdirectoryDB struct {
+	Name            string            `json:"name,omitempty"`
 	Repository      string            `json:"repository,omitempty"`
 	Tag             string            `json:"tag,omitempty"`
 	ImagePullPolicy corev1.PullPolicy `json:"imagePullPolicy,omitempty"`
