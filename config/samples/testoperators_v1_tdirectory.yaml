@@ -10,6 +10,7 @@ metadata:
   name: tdirectory-sample
 spec:
   tdirectoryApp:
+    Name: "tdirectoryApp"
     repository: "tdirectory"
     tag: v1
     imagePullPolicy: "IfNotPresent"
@@ -18,11 +19,10 @@ spec:
     targetPort: 8080
     serviceType: "LoadBalancer"
   tdirectoryDB:
+    Name: "tdirectoryMongo"
     repository: "mongo"
     tag: latest
     imagePullPolicy: "IfNotPresent"
     replicas: 1
     port: 27017
     dbSize: 2Gi
-
-  # TODO(user): Add fields here
